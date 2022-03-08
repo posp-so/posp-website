@@ -2,7 +2,7 @@ import { Disclosure, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import Image from 'next/image'
-import logo from '../public/vercel.svg'
+import logo from '../public/discord.svg'
 import discordLogo from '../public/discord.svg'
 import twitterLogo from '../public/twitter.svg'
 import githubLogo from '../public/github.svg'
@@ -13,7 +13,7 @@ const MenuBar: React.FC = () => {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 z-50 bg-white px-0 pt-0 pb-4 transition-all ease-in-out sm:px-4 sm:pt-6"
+      className="sticky top-0 z-50 bg-white px-0 pt-0 shadow-sm transition-all ease-in-out sm:px-4"
     >
       {({ open }) => (
         <>
@@ -33,10 +33,15 @@ const MenuBar: React.FC = () => {
               {/* desktop menu */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
+                  <div className="flex items-center justify-center space-x-4 align-middle">
                     <Link href="/">
-                      <a className="h-11 w-11 items-center">
-                        <Image src={logo} alt="portfolio logo" />
+                      <a className="items-center align-middle">
+                        <Image
+                          src={logo}
+                          alt="portfolio logo"
+                          width={32}
+                          height={32}
+                        />
                       </a>
                     </Link>
                   </div>
@@ -94,7 +99,7 @@ const MenuBar: React.FC = () => {
             leaveTo="transform scale-95 opacity-0"
           >
             <Disclosure.Panel className="w-full sm:hidden">
-              <div className="mx-auto flex h-full w-full flex-col space-y-6 bg-white px-2">
+              <div className="mx-auto flex h-full w-full flex-col space-y-6 bg-white px-2 pb-4">
                 <Disclosure.Button>
                   <NavLink to="https://careers.posp.so">Careers</NavLink>
                 </Disclosure.Button>
